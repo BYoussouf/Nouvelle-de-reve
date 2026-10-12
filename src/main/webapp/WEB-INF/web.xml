@@ -8,4 +8,16 @@
             30
         </session-timeout>
     </session-config>
+    
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
+    
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <url-pattern>*.jspf</url-pattern>
+            <include-prelude>/WEB-INF/jspf/taglibs.jspf</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>
