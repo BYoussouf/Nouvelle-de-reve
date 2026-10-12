@@ -1,3 +1,86 @@
-<%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h2>Header</h2>
+
+<div>
+    <a href="<c:url value='/home'/>" alt="Accueil">
+        <div class="logo">
+            n
+        </div>
+        <div>
+            <p class="appTitle">Nouvelles de rêve</p>
+            <p>la littérature en partage</p>
+        </div>
+    </a>
+</div>
+
+<div>
+    <c:choose>
+        <c:when test="${sessionScope.user.name.equals('Admin')}">
+<nav>
+                <ul>
+                    <li class='simple'>
+                        <a href="<c:url value='/home'/>" alt="Accueil">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class='simple'>
+                        <a href="<c:url value='#'/>" alt="Administration">
+                            Administration
+                        </a>
+                    </li>
+                    <li class='disconnect'>
+                        <a href="<c:url value='#'/>" alt="Déconnexion">
+                            Déconnexion
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </c:when>
+        <c:when test="${not empty sessionScope.user}">
+            <nav>
+                <ul>
+                    <li class='simple'>
+                        <a href="<c:url value='/home'/>" alt="Accueil">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class='greenunderline'>
+                        <a href="<c:url value='#'/>" alt="Profil">
+                            Mon profil
+                        </a>
+                    </li>
+                    <li class='greenbtnfull'>
+                        <a href="<c:url value='#'/>" alt="Publier">
+                            <button>Publier une nouvelle</button>
+                        </a>
+                    </li>
+                    <li class='greenunderline'>
+                        <a href="<c:url value='#'/>" alt="Déconnexion">
+                            Déconnexion
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </c:when>
+        <c:otherwise>
+            <nav>
+                <ul>
+                    <li class='simple'>
+                        <a href="<c:url value='/home'/>" alt="Accueil">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class='greenunderline'>
+                        <a href="<c:url value='#'/>" alt="Connexion">
+                            Connexion
+                        </a>
+                    </li>
+                    <li class='greenbtnfull'>
+                        <a href="<c:url value='#'/>" alt="S'inscrire">
+                            <button>S'inscrire</button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </c:otherwise>
+    </c:choose>
+</div>
