@@ -9,5 +9,5 @@
 <c:import url="/WEB-INF/template.jsp">
     <c:param name="title" value="Accueil"/>
     <c:param name="content" value="homeContent"/>
-    <c:param name="cssFiles" value="" />
+    <c:param name="cssFiles" value="global" />
 </c:import>
